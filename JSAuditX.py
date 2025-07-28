@@ -130,7 +130,6 @@ class JSAuditX:
         return {
             'xss': [re.compile(r'document\.write\(\s*[^,]+?\+\s*[^)]+\)'), re.compile(r'<script.*?src=.*?javascript:|eval\(\s*[^,]+?\+\s*[^)]+\)')],
             'sql_injection': [re.compile(r'SELECT.*?FROM.*?WHERE.*?(\+|\|\||\&\&|AND|OR).*?=.*?\$')],
-            'command_injection': [re.compile(r'exec\(|system\(|shell_exec\(|`|\$\(.*?\)')],
             'csrf': [re.compile(r'csrf_token|anti_csrf|xsrf_token', re.IGNORECASE)],
             'insecure_cookie': [re.compile(r'document\.cookie.*?=.*?(;|$)', re.IGNORECASE)],
             'unvalidated_redirect': [re.compile(r'window\.location\.href.*?=.*?(\+|blockurl)|location\.replace\(.*?blockurl\)'), re.compile(r'location\.href\s*=\s*[^;]+?blockurl', re.IGNORECASE)],
